@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu - 71 Closures in javascript..</title>
+</head>
+
+<body>
+     <h1>Closures in javascript..</h1>
+
+     <script>
+
+          /* let message = "This is a global message..";
+           function simpleFunction() {
+                message = "This is a simpleFunctional message";
+                console.log(message) // This is a simpleFunctional message
+                function myFun() {
+                     let message = "Hey! I am inside myFun";
+                     console.log(message);
+                }
+                myFun();
+                console.log(message);
+           }
+           simpleFunction(); */
+
+
+
+
+
+          /* =========> Simple Programs Using Closures in javascript.. 
+          Example: #1. */
+          const closureFunc = () => {
+               const userName = "Aman"
+               function printUserName() {
+                    console.log(userName);
+               };
+               return printUserName;
+          };
+
+          const callFunction = closureFunc();
+          callFunction();
+
+
+          // Example: #2.
+          const secondFunction = () => {
+               const companyName = "https://google.com";
+               const printCompanyName = () => {
+                    console.log(companyName);
+               };
+               return printCompanyName;
+          };
+
+          const callSecondFunction = secondFunction();
+          callSecondFunction();
+
+
+          // Example: #3.
+          const thirdFunction = () => {
+               let address = "Amba, Aurangabad, ('bihar')";
+               function printAddress() {
+                    console.log(address);
+               };
+               address = "Banglore"; // In the return the address will be returned as 'Banglore'
+               return printAddress;
+          };
+
+          const callThirdFunction = thirdFunction();
+          callThirdFunction(); // 'Banglore' will print 
+
+
+          const program = () => {
+               const programMsg = "This is a coding program..";
+               const printProgram = () => {
+                    console.log(programMsg);
+               }
+               return printProgram;
+          }
+          const callProgram = program();
+          callProgram();  
+     </script>
+</body>
+
+</html>

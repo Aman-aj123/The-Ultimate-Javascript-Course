@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu - 44 Async Await in Javascript</title>
+    <style>
+        #main {
+            background: rgba(0, 0, 0, 0.2);
+            width: 200px;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        /* async function hellow() {
+              let delhiWeather = new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                      resolve("45deg")
+                  }, 2000)
+              })
+  
+              let haryanaWeather = new Promise((resolve, reject) => {
+                  setTimeout(() => {
+                      resolve("33deg")
+                  }, 6000)
+              })
+  
+              console.log("Delhi weater is loading please wait...")
+              let delhiW = await delhiWeather;
+              console.log("Delhi weather is loaded sucessfully! With: " + delhiW)
+  
+              console.log("Haryana weater is loading please wait...")
+              let haryanaW = await haryanaWeather;
+              console.log("Haryana weather is loaded sucessfully! With: " + haryanaW) 
+          }
+  
+          let a = hellow();
+          console.log(a)  */
+
+       
+
+        const printFruits = async () => {
+            const mango = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("I am mango and I am first fruit..")
+            }, 3000)
+        })
+        const banana = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("I am banana and I am second fruit...")
+            }, 2000)
+        })
+        const apple = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve("I am apple and I am third fruit...")
+            }, 1000)
+        })
+
+
+            console.log("please wait Mango is loading...")
+            const mangoFruit = await mango;
+            console.log("Mango loaded sucessfully  with:", mangoFruit)
+
+            console.log("please wait Banan is loading... with:", mangoFruit)
+            const bananaFruit = await banana;
+            console.log("Banana loaded sucessfully")
+
+            console.log("please wait Apple is loading... with:", mangoFruit)
+            const appleFruit = await apple;
+            console.log("Apple is loaded sucessfully.. with:", mangoFruit)
+        }
+
+        let callFrutits = printFruits()
+        console.log(callFrutits)
+
+        /* const firstPromise = new Promise((resolve, reject) => {
+             setTimeout(() => {
+                 resolve("I am first promise and i am resolving after four seconds..")
+             }, 4000)
+         })
+         const secondPromise = new Promise((resolve, reject) => {
+             setTimeout(() => {
+                 resolve("I am second promise and i am resolving after four seconds..")
+             }, 3000)
+         })
+         const thirdPromise = new Promise((resolve, reject) => {
+             setTimeout(() => {
+                 resolve("I am third promise and i am resolving after one seconds..")
+             }, 1000)
+         })
+ 
+         const awaitPromises = async () => {
+             console.log("Starting...")
+ 
+             console.log("First Promise is loading..");
+             const awaitFirstPromise = await firstPromise;
+             console.log(awaitFirstPromise);
+ 
+             console.log("Second Promise is loading...")
+             const awaitSecondPromise = await secondPromise;
+             console.log(awaitSecondPromise);
+ 
+             console.log("Third Promise is loading")
+             const awaitThirdPromise = await thirdPromise;
+             console.log(awaitThirdPromise);
+ 
+             console.log("Ended...")
+         }
+         awaitPromises(); */
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await in javascript</title>
+</head>
+
+<body>
+    <h1>Async Await in javascript</h1>
+
+    <script>
+
+        // new promise 
+        // let p1 = new Promise((resolve, reject) => {
+        //     resolve("Hey! I am a resolving promise")
+        // })
+
+        // Async function always returns a Promise
+        // let getData = async () => {
+        //     return p1
+        // }
+
+        // here you will see that it is returning a promise
+        // console.log(getData())
+
+        // To return the value from getInput function like this
+        // getData().then((value) => { 
+        //     console.log(value)
+        // }) 
+
+        // let promiseSecond = new Promise((resolve, reject) => {
+        //     setTimeout(() => {
+        //         resolve(20);
+        //     }, 8000)
+        // })
+
+
+
+        //    async function printVal() {
+        //         let p1Val = await promiseSecond.then((val) => {
+        //             console.log(val)
+        //         })
+        //         console.log("Hey! I was waiting")
+        //     }
+        //     printVal()
+
+        setTimeout(() => {
+            function first() {
+                console.log("Hey! I am first")
+            }
+        }, 6000)
+
+        setTimeout(() => {
+            function second() {
+                console.log("Hey! I am second")
+            }
+        }, 4000)
+
+        setTimeout(() => {
+            function third() {
+                console.log("Hey! I am third")
+            }
+        }, 3000)
+
+        async function go() {
+            let c1 =   first();
+            let c2 =   second();
+            let c3 =   third();   
+
+        }
+  
+        go()
+
+
+    </script>
+</body>
+
+</html>

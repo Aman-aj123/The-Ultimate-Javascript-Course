@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and objects in javascript | 59</title>
+</head>
+
+<body>
+    <h1> Classes an objects in javascript </h1>
+    <script>
+
+        /*       class railwayForm {
+                   submit() {
+                       alert("This form is submitted..")
+                   }
+                   cancel() {
+                       alert("This form is canceld..")
+                   }
+               }
+       
+               let aman = new railwayForm();
+               let harry = new railwayForm();
+       
+               aman.submit()
+               aman.submit()
+               aman.cancel() */
+
+
+
+        /*  const callSomething = class randomCalls {
+              hellow() {
+                  console.log("Hi I am alerting to you..");
+              }
+              alert() {
+                  alert("Hi I am alerting to you...")
+              }
+              confirm() {
+                  confirm("Hi I am confirming to you..")
+              }
+              warning() {
+                  ("Hi I am giving warning to you..")
+              }
+              error() {
+                  console.error("Hi I am giving error to you...")
+              }
+  
+          } */
+
+        // Simple javascript form program for submitting and cancelling the form by taking some user information
+
+        /*   const askName = prompt("Enter Your name");
+           const askEmail = prompt("Enter Your email.");
+           const askPhone = prompt("Enter Your Phone number.");
+   
+           class developerForm {
+               submit() {
+                   console.log(`Your Form is submitted sucessfully with following informations`);
+               }
+               cancel() {
+                   console.log("Your form is cancelled sucessfully with the following informations.")
+               }
+               name() {
+                   console.log(`Name: ${askName}`);
+               }
+               email() {
+                   console.log(`Email: ${askEmail}`);
+               }
+               phone() {
+                   console.log(`Phone: ${askPhone}`);
+               }
+           }
+   
+           const confirmation = confirm("If you want to submit this form please press ok And if you want to cancel this form press cancel");
+   
+           if (confirmation) {
+               new developerForm().submit();
+               new developerForm().name();
+               new developerForm().email();
+               new developerForm().phone();
+           }
+           else if (!confirmation) {
+               new developerForm().cancel();
+               new developerForm().name();
+               new developerForm().email();
+               new developerForm().phone();
+           }
+   */
+
+
+        /*
+NOTE: 1. ====> creating classes and objects in javascript must be contains "class" keyword.
+Example: class computerEngeinerring {
+   javascript() {
+    console.log("javascript")
+  }
+   python(){
+    console.log("python")
+   }
+}
+
+Here, before computerengeinerring "class" key must be contain.
+
+
+2. ======> During calling the classes in javascript "new" keyword must be contain.
+Example: new computerEnginerring().javascript()
+
+Here, we are calling that computerEngeinerring class you can see it on the top.
+        */
+
+
+
+        /*
+
+
+        /*
+Practice question: 1 ==>  You are creaing a website for your college. Create a class User with two properties Name and Email. It als has a method called viewData() that allows to user to view website data.
+        */
+
+
+        /*    class userData {
+                constructor(name, email) {
+                    this.name = name;
+                    this.email = email;
+                }
+    
+            }
+    
+    
+    
+            class Admin extends userData {
+                constructor(name, email) {
+                    super(name, email)
+                    this.name = name;
+                    this.email = email;
+                }
+            }
+    
+            const userInformation = new userData("Aman", "rajAman@gmail.com");
+            console.log(userInformation);
+    
+            const adminInformation = new Admin("Mohan", "kumarMohan@gmail.com");
+            console.log(adminInformation)
+     
+            console.log(userInformation); */
+
+
+
+
+        /*
+
+Practice question 2.
+solution: 
+        */
+
+        /*    class Person {
+                constructor(name, age, gender) {
+                    this.name = name;
+                    this.age = age;
+                    this.gender = gender;
+                }
+                setName(personName) {
+                    this.name = personName;
+                    return this.name;
+                }
+                setAge(personAge) {
+                    this.age = personAge;
+                    return this.age;
+                }
+                setGender(personGender) {
+                    this.gender = personGender;
+                    return this.gender;
+                }
+                getName() {
+                    return this.name;
+                }
+                getAge() {
+                    return this.age;
+                }
+                getGender() {
+                    return this.gender;
+                }
+            }
+    
+            const setName = new Person("Sita kumari", 20, "Female").setName("Anurag");
+            const setAge = new Person("Khusbu kumari", 23, "Female").setAge(15);
+            const setGender = new Person("Rohit kumar", 15, "Male").setGender("Male");
+    
+            const printName = new Person("Mohit Raj", 23, "Male").getName();
+            const printAge = new Person("Anjali kumari", 18, "Female").getAge();
+            const printGender = new Person("Aman kumar", 14, "Male").getGender();
+    
+            console.log("Printing the information by asking user..")
+            console.log(setName)
+            console.log(setAge)
+            console.log(setGender)
+    
+            console.log("Printing the information without asking user..")
+            console.log(printName)
+            console.log(printAge)
+            console.log(printGender)
+    
+    
+            console.log("Printing full setted value")
+            const fulValue = new Person("Ankit", 17, "Male");
+            console.log(fulValue)  */
+
+
+
+        /*  Exercise: 3
+        Solution:
+        */
+        class Person {
+            constructor(name, age, gender, email) {
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+                this.email = email;
+
+                if (this.age < 1) {
+                    throw new ReferenceError("Your age should not be negative value..");
+                }
+                else if (this.age < 8) {
+                    throw new ReferenceError("Your age is less so, you can't able to join this class.")
+                }
+                else if (this.age > 70) {
+                    throw new ReferenceError("Your age is old so, you can't able to join this class as anything")
+                }
+                else {
+                    return;
+                }
+            }
+            getName() {
+                return this.name;
+            }
+            getAge() {
+                return this.age;
+            }
+            getGender() {
+                return this.gender;
+            }
+            getEmail() {
+                return this.email;
+            }
+
+
+
+            setName(personName) {
+                this.name = personName;
+                return personName;
+            }
+            setAge(personAge) {
+                this.age = personAge;
+                return personAge;
+            }
+            setGender(personGender) {
+                this.gender = personGender;
+                return personGender;
+            }
+            setEmail(personEmail) {
+                this.email = personEmail;
+                return personEmail;
+            }
+        }
+
+        // Making any person
+        const defaultPerson = new Person("Person134", 34, "Male", "person123@gmail.com");
+        const defaultPersonName = defaultPerson.setName("Nandani kumari");
+        const defaultPersonAge = defaultPerson.setAge(17);
+        const defaultPersonGender = defaultPerson.setGender("Female");
+        const defaultPersonEmail = defaultPerson.setEmail("nandani@gmail.com");;
+
+        // console.log(defaultPerson);
+
+        // making student
+        class Student extends Person {
+            constructor(name, age, gender, email, roll, standard) {
+                super(name, age, gender, email)
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+                this.email = email;
+                this.roll = roll;
+                this.standard = standard;
+            }
+            getStudentRoll() {
+                return this.roll;
+            }
+            getStudentStandard() {
+                return this.standard;
+            }
+
+            setStudentRoll(studentRoll) {
+                this.roll = studentRoll;
+                return studentRoll;
+            }
+            setStudentStandard(studentStandard) {
+                this.standard = studentStandard;
+                return studentStandard;
+            }
+        }
+
+        // Making a student
+        const student1 = new Student("Rahul", 19, "Male", "rahul@gmail.com", "10", "12th");
+        // const student1Name = student1.getName() 
+        const student1Name = student1.setName("coderAman");
+        const studetn1Standard = student1.setStudentStandard("7th");
+        const student1Roll = student1.setStudentRoll('15');
+        // console.log(student1) 
+
+
+        class Teacher extends Person {
+            constructor(name, age, gender, email, subjectTeacher, homework) {
+                super(name, age, gender, email)
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+                this.email = email;
+                this.subjectTeacher = subjectTeacher;
+                this.homework = homework;
+            }
+            getHomework() {
+                return this.homework;
+            }
+            setHomework(teacherHomework) {
+                this.homework = teacherHomework;
+            }
+        }
+        
+
+        // creating a teacher 
+        const teacher1 = new Teacher("Sujit sir", 20, "male", "kumarSujit@gmail.com", "Science", "Read about Light.");
+        const changeTeacherHomework = teacher1.setHomework("Read about time and motion..")
+
+        const student = new Student("RajAman", 18, "Male", "aman@gmail.com", 15, "7th")
+
+        console.log(student)
+
+    </script>
+</body>
+
+</html>

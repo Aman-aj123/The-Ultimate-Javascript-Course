@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Callbacks</title>
+</head>
+
+<body>
+
+    <script>
+
+        //    Chyncronous Programming  
+
+        // It will show one by one then it will print the last thing
+        /* let a = prompt("Hey! what is your name")
+       let b = prompt("Hey! what is your Age")
+       let c = prompt("Hey! what is your work")
+       console.log(`Your Name is: ${a} And Your Age is: ${b} And Your Work is: ${c}`); */
+
+
+        //    Achyncronous Programming
+
+        // In this case this will be printed any time according to your given seconds
+        /* console.log("I am Starting")
+        setTimeout(()=>{
+        console.log("Hey! I am calling after 2 seconds")
+        }, 2000)   
+       console.log("I am Ending")  */
+
+
+
+
+        // Callbacks 
+
+        /*     function loadScript(src, callback) { 
+                 var script = document.createElement('script')
+                 script.src = src;
+                 script.onload = function () {
+                     console.log("This script is loaded sucessfully  With: " + src)
+                     callback(src)
+                 }
+     
+                 script.onerror = function() {
+                     console.log("Here is new error showing!")
+                     callback(new Error('Script is not found due to the some mistakes'))
+                 }
+     
+                 document.body.appendChild(script);
+             }
+     
+             function pranam(src) {
+                 alert("Pranam is loaded " + src)
+             }
+     
+             loadScript(" https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js", pranam) */
+
+
+
+        /*  function call(a, b, ope) {
+             return ope(a, b)
+         }
+ 
+         let multiply = (a, b) => {
+             return a * b;
+         }
+ 
+         let add = (a, b) => {
+             return a + b;
+         }
+ 
+ 
+         let subt = (a, b) => {
+             return a - b;
+         }
+ 
+         let divide = (a, b) => {
+             return a / b;
+         }
+ 
+         let finalResult = call(10, 20, add)
+         let secondFinal = call(10, 20, subt)
+         let thirdFinal = call(10, 20, multiply)
+         let fourthFinal = call(20, 10, divide)
+ 
+         console.log(finalResult);   
+         console.log(secondFinal);
+         console.log(thirdFinal);
+         console.log(fourthFinal); */
+
+      
+
+
+    </script> 
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Promise Api - 43</title>
+</head>
+
+<body>
+    <script>
+
+        let first = new Promise((resolve, reject) => {
+            resolve('This is first promise and it is resolving')
+        })
+        let second = new Promise((resolve, reject) => {
+            resolve('This is second promise and it is resolving')
+        })
+        let Third = new Promise((resolve, reject) => {
+            reject('This is Third promise and it is Rejected...')
+        }).catch((e) => {
+            console.log(e)
+        })
+
+        //  It allows to Print all the promises together like an array eighter the promise is resolved or rejected and if the promse is rejected then it will throw error..
+        let Promise_All = Promise.all([first, second, Third])
+
+        // It allows to print the only resolved promsie 
+        let Promise_All_settled = Promise.allSettled([first, second, Third])
+
+        // It allows to the resolved promise which is resolving in the first 
+        let Promise_Any = Promise.any([first, second, Third])
+
+        // It is same as the Promise.any 
+        let Promise_race = Promise.any([first, second, Third])
+
+        console.log(Promise_All)    
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu - 73 Chapter 12 Practice </title>
+</head>
+
+<body>
+     <h1>Chapter 12 Practice set questions</h1>
+     <script>
+
+          // Question no.-------------> #1: Write an IIFE function for awaiting promises
+          /*   const messagesArr = [
+                   "This is message first...",
+                   "This is message second..",
+                   "This is message third...",
+                   "This is message fourth..",
+                   "This is message fifth...",
+                   "This is message sixth...",
+                   "This is message seventh...",
+                   "This is message eighth...",
+                   "This is message ninth...",
+                   "This is message tenth...",
+                   "This is message eleventh...",
+                   "This is message twelth...",
+                   "This is message thirteenth...",
+                   "This is message fourteenth...",
+                   "This is message fifteenth...",
+              ]
+    
+              const promiseFirst = (message, seconds) => {
+                   return new Promise((resolve, reject) => {
+                        setTimeout(() => {
+                             resolve(message)
+                        }, seconds * 1000)
+                   });
+              };
+    
+              (
+                   async () => {
+                        let i = -1;
+                        while (i < messagesArr.length) {
+                             i++;
+                             const printMessages = await promiseFirst(messagesArr[i], .5);
+                             console.log(printMessages);
+                        }
+                   }
+              )();  */
+
+
+
+
+
+          // Question no. #2-----------------> Write a javascript program to find the average of numbers which exists in array using spread operator
+          /*  const findAverage = (num1, num2, num3, num4) => {
+                   return (num1 * num2 * num3 * num4) / 4;
+              }
+              const numArr = [2, 4, 3, 7];
+              const callFunction = findAverage(...numArr);
+              console.log(callFunction);   */
+
+
+
+
+
+          // Question no. #3---------------> Write a simple javascript program which calculates the simple interest
+          const calculateSimpleInterest = (p, r, t) => {
+               return (p * r * t) / 100;
+          };
+          const callSI = calculateSimpleInterest(200, 5, 2);
+          console.log(callSI);
+
+
+     </script>
+</body>
+
+</html>

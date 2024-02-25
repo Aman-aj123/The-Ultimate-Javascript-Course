@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu - 68 Destructuring in javascript..</title>
+</head>
+
+<body>
+     <h1>Destructuring in javascript.</h1>
+
+     <script>
+
+          // ---------> Destructuring with arrays
+          const fruits = ["Apple", "Banana", "Mango", "Guava",]
+
+          // Without Destructuring
+          // console.log(fruits[0]);
+          // console.log(fruits[1]);
+          // console.log(fruits[2]);
+          // console.log(fruits[3]);
+
+          // By Destructuring
+          const [apple, banana, mango, guava] = fruits;
+          // console.log(apple)
+          // console.log(banana)
+          // console.log(mango)
+          // console.log(apple)
+
+
+          //------------> Destructuring with objects
+          const userInformation = {
+               name: "developerAman",
+               age: "14 years",
+               work: "Forntend developement",
+               address: "Amba, Aurangabad, (Bihar)",
+          }
+          // without destructuring 
+          // console.log(userInformation.name);
+          // console.log(userInformation.age);
+          // console.log(userInformation.work);
+          // console.log(userInformation.address);
+
+          // By destructuring
+          const { name, age, work, address } = userInformation;
+          // console.log(name);
+          // console.log(age);
+          // console.log(work);
+          // console.log(address);
+
+          // More examples of destructuring:
+          const Numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+          // const [a, b, c, d, e, f, ...others] = Numbers;
+          // console.log(a);
+          // console.log(b);
+          // console.log(c);
+          // console.log(d);
+          // console.log(e);
+          // console.log(f);
+          // console.log(others);
+
+          // Here I want to print 10, 20, 30, 40  and after I want to print rest numbers by  leaving 50, 60, 70, 80 So I can do like this:
+          const [a, b, c, d, , , , ...others] = Numbers;
+          // console.log(a);
+          // console.log(b);
+          //  console.log(c);
+          // console.log(d);
+          // console.log(others)
+
+
+
+          //----------------> Spread operator 
+          // Spread operator allows we to change any array to objects by triple dots "..." and one name like this: 
+          // const arrayOne = [5, 9, 8, 7, 2, 10, 30, 50, 48];
+          // const makeObject = { ...arrayOne }; // Here we are converting this array to an object
+          // console.log(makeObject); 
+
+
+
+          const numArray = [5, 9, 7, 10]
+          function addArrayValue(num1, num2, num3, num4) {
+               console.log(num1 + num2 + num3 + num4);
+          }
+          addArrayValue(...numArray); // here we are using spred operator
+
+
+
+
+          //------- Most uses of spread operator with objects ------>
+          const information = {
+               name: "Aman Raj",
+               email: "Aman@gmail.com",
+               age: "14 years old."
+          }
+          // here we can print the whole information object's with changing any values also.
+          const printInformation = { ...information, name: "developerAman", age: "18 years old." }
+
+          // This will not work
+          const secondMethod = { name: "Mohan Raj", ...information }
+          // console.log(secondMethod);
+          console.log(printInformation);
+
+     </script>
+</body>
+
+</html>

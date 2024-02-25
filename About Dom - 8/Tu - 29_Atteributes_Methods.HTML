@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu - 29 Attributes Methods in Javascript</title>
+</head>
+<body>
+
+    <h1 id="fHead" class="heading">This is a First Heading</h1>
+
+ <script>
+
+     let find = document.getElementById('fHead')
+     
+//  It allows to Accesss the class from our any element 
+  console.log(find.getAttribute('class'))
+
+//    It allows to know that these thing is available or not 
+console.log(fHead.hasAttribute('class'))
+console.log(fHead.hasAttribute('style'))
+ 
+// It allow to set attributes in our elemnts 
+// console.log(find.setAttribute ("hidden", "true"))
+
+// It removes the Attributes from the elements 
+console.log(fHead.removeAttribute('class'))
+
+// It shows the all attributes which is present in the element 
+console.log(fHead.attributes)
+     
+ </script> 
+
+</body>                                                                     
+</html>

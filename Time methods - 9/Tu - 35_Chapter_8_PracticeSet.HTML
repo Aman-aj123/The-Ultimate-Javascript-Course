@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8 practice questions</title>
+    <style>
+        body {
+            margin: 70px 300px;
+ background-color: rgb(0, 0, 13);
+        }
+h1 {
+    color: white;
+}
+        #bulb {
+            color: white;
+            height: 200px;
+            width: 300px;
+            background: rgba(255, 255, 0, 0.245);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.389);
+        }
+
+        .mainbulb {
+            background: #e6e619ee !important;
+            box-shadow: 0 0 40px #e6e619ba !important;
+        }
+
+        #btn {
+            margin: 8px 0;
+            padding: 8px 10px;
+            background: green;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1>Glowing Bulb Effect</h1>
+    <div id="bulb"></div>
+    <button id="btn">Atuto switching light</button>
+
+    <!-- Question No: 1 -->
+    <!-- <button>First</button>
+    <button>Second</button>
+    <button>Third</button>
+    <button>Fourth</button> -->
+
+    <!-- Question No: 2 -->
+
+    <!-- <h1>Bookmarks</h1>
+  <!-- <a href="https://google.com"><button>Google</button></a>
+  <a href="https://facebook.com"><button>Facebook</button></a>
+  <a href="https://whatsapp.com"><button>Whatsapp</button></a>
+  <a href="https://instagram.com"><button>Instagram</button></a>
+  <a href="https://youtube.com"><button>Youtube</button></a> 
+
+  <button>Google</button>
+  <button>Facebook</button>
+   <button>Whatsapp</button>
+  <button>Insagram</button>
+  <button>Youtube</button> -->
+
+    <script>
+
+        //  Question No: 1 
+
+        //  let btns = document.querySelectorAll('button')
+
+        /*   btns[0].onclick = function () {
+               alert("You clicked on First Button")
+           }
+   
+           btns[1].onclick = function () {
+               alert("You clicked on Second Button")
+           }
+   
+           btns[2].onclick = function () {
+               alert("You clicked on Thrid Button")
+           }
+   
+           btns[3].onclick = function () {
+               alert("You clicked on Fourth Button")
+           }   */
+
+
+        // Question No: 2 
+
+        /*    btns[0].onclick = function() {
+               location.href = "https://google.com"
+            }
+            btns[1].onclick = function() {
+               location.href = "https://facebook.com"
+            }
+            btns[2].onclick = function() {
+               location.href = "https://whatsapp.com"
+            }
+            btns[3].onclick = function() {
+               location.href = "https://instagram.com"
+            }
+            btns[4].onclick = function() {
+               location.href = "https://youtube.com"
+            }   */
+
+
+        //  Question NO: 3 
+
+        /*  setInterval(()=>{
+              let a = 1;
+              console.log( a + " I am printing every 2 seconds")
+          }, 2000) */
+
+
+        //  Question NO: 4
+
+        setInterval(() => {
+            let bulb = document.getElementById('bulb')
+            let switchBtn = document.getElementById('btn')
+                bulb.classList.toggle('mainbulb')
+        },300)
+    </script>
+
+
+</body>
+
+</html>

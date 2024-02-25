@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in Javascript</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        let a = Number.parseInt(10);
+        let b = Number.parseInt(20);
+
+        function sum(a, b) {
+            console.log("The sum of A and B is " + a + b);
+
+            return a + b;
+        }
+
+        console.log(
+            sum(6, 2)
+        )
+
+        console.log(
+            sum(100, 20)
+        )
+
+
+        // Arrow function 
+             let fun = (x,z)=> {
+                console.log("the subtraction of X and Z is ")
+                return x-z;
+             }
+
+             console.log(
+                fun(20,10)
+             )
+
+
+    </script>
+
+</body>
+
+</html>

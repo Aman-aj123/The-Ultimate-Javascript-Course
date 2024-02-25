@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Inheritance and extends keyword</title>
+</head>
+
+<body>
+     <h2>Inheritance and extends keyword in javascript</h2>
+
+
+     <script>
+
+          class Animal {
+               constructor(animalName, animalActivity) {
+                    this.animalName = animalName;
+                    this.animalActivity = animalActivity;
+                    console.log(`The work of  ${animalName} is ${animalActivity}`)
+               }
+               running() {
+                    console.log(`${this.animalName} is Running fast.`)
+               }
+               playing() {
+                    console.log(`${this.animalName} is Playing fast.`);
+               }
+          }
+          /* By writting extends keyword the particular class is made in the given class
+       ====> for example if we write class Monkey extends Animal 
+       then the Monkey class is made in Animal class .   
+          */
+          class Monkey extends Animal {
+               jumping() {
+                    console.log(`${this.name} is jumping`)
+               }
+          }
+
+          new Monkey("Kangaroo", "talking").running();
+
+          new Animal("Aman", "Walking").jumping() // It will not work because we can access the objects which is created in his classes.
+
+
+     </script>
+</body>
+
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Fetch Api - 57</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+
+        #main {
+            border-radius: 5px;
+            margin: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            row-gap: 26px;
+            margin-top: 50px;
+        }
+
+        #content {
+            padding: 10px 20px;
+            border: 1px solid gainsboro;
+            width: 465px;
+        }
+
+        #content img {
+            width: 100%;
+            height: 330px;
+            object-fit: cover;
+        }
+
+        #main h2 {
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        #main .productId {
+            font-weight: 430;
+            margin-top: 6px;
+        }
+
+        #main .productId span {
+            font-weight: 500;
+            margin-left: 5px;
+        }
+
+        #main button {
+            padding: 8px 20px;
+            font-size: 16px;
+            letter-spacing: .70px;
+            cursor: pointer;
+            font-weight: 400;
+            background: orange;
+            border: 1px solid gainsboro;
+            border-radius: 5px;
+            margin-top: 14px;
+            transition: .2s linear;
+        }
+
+        #main .product-price {
+            margin-top: 6px;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        #main button:hover {
+            background: rgb(190, 127, 9);
+        }
+
+
+
+        nav {
+            position: sticky !important;
+            top: 0;
+        }
+
+        nav #input {
+            width: 300px;
+        }
+
+        .cart {
+            padding: 0 26px;
+            position: sticky;
+            top: 63px;
+        }
+
+
+
+
+        .cart i {
+            background: white;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 26px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .2s linear;
+            position: relative;
+        }
+
+        #num {
+            opacity: 0;
+        }
+
+        .cart #num::after {
+            content: attr(data-count);
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            right: 31px;
+            top: 0;
+            color: white;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .cart i:hover {
+            background: rgba(0, 0, 0, 0.1)
+        }
+
+        /* cart area items  */
+        .item-image img {
+            width: 50px;
+        }
+
+        .cartItems {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 20px;
+        }
+
+        .cart-btn {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            gap: 10px;
+        }
+
+        .cart-btn {
+            border-radius: 5px;
+            padding: 8px 10px;
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cart" style="width: 100%;">
+        <i style="float: right;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight" class="bi bi-cart-check-fill"> </i>
+        <div class="num" id="num"></div>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header" style="background: aqua; height:52px;">
+                <h3 class="offcanvas-title mx-2 my-2 id=" offcanvasRightLabel"
+                    style="color: orange; width:100%;text-align:center;">My Cart</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body" id="">
+                <h4 id="emptyCart" class="my-5 mx-4">Your cart is empty..</h4>
+                <div id="cartArea"></div>
+                <div class="cart-btn">
+                    <h4>Total</h4>
+                    <b style="font-size: 18px; letter-spacing: .70px; color: blue;" id="total_price">$00</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="main">
+    </div>
+    <div class="button-ne mx-3 my-5">
+        <button type="button" class="btn btn-danger">View More Products</button>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        let productList = [
+            {
+                Id: "1",
+                Title: "Fashion Bag Ecommerce",
+                Rating: "1",
+                Cateogry: "woman cateogry",
+                description: "This is a water proffe bag with modern looking style in black color with 5 chains. It can hold very much products. It is used by you for going school, office and other purpose.",
+                Price: "$ 399",
+                class: "first",
+                src: "https://images.dailyobjects.com/marche/product-images/1205/dailyobjects-midnight-blue-swing-duffle-bag-images/DailyObjects-Blue-Swing-Duffle-Bag.png?tr=cm-pad_resize,v-2",
+            },
+            {
+                Id: "2",
+                Title: "Stylsih suit",
+                Rating: "3",
+                Cateogry: "men cateogry",
+                description: "This Stylish suit is for men It is very beautiful looking The clothes of this suit are very soft and smooth when you wear this you looks very beautiful.",
+                Price: "$ 253",
+                class: "second",
+                src: "https://5.imimg.com/data5/SELLER/Default/2021/3/YL/QM/VF/29003962/maroon-coat-suit-500x500.png",
+            },
+            {
+                Id: "3",
+                Title: "Digital watch",
+                Rating: "2",
+                Cateogry: "men cateogry",
+                description: "This is digital looking watch in black color In this watch you can show time also as well as you can check your heart beets and whenever you run or walk it tells the what distance you have taken you can connect it with your mobile phone and enjoy more features.",
+                Price: "$ 699",
+                class: "third",
+                src: "https://cdn.pixabay.com/photo/2018/02/22/15/32/clock-3173261_1280.png",
+            },
+            {
+                Id: "4",
+                Title: "Mouse",
+                Rating: "6",
+                Cateogry: "Electricity cateogry",
+                description: "This is mouse feel you very soft and you can use it with your laptop or computer also in this mouse three buttons are available by which you can use it as very well.",
+                Price: "$ 500.00",
+                class: "fourth",
+                src: "https://media.croma.com/image/upload/v1681412995/Croma%20Assets/Computers%20Peripherals/Computer%20Accessories%20and%20Tablets%20Accessories/Images/225662_0_dyzgte.png",
+            },
+            {
+                Id: "5",
+                Title: "Laptop",
+                Rating: "8.55",
+                Cateogry: "Electricty cateogry",
+                description: "Electric laptop is very useful for you you can watch movies play games as well as you can do anything in this laptop it charge with electricity",
+                Price: "$ 10,999",
+                class: "fifth",
+                src: "https://m.media-amazon.com/images/I/81fy8e0iuAS._AC_UF350,350_QL80_.jpg",
+            },
+            {
+                Id: "6",
+                Title: "T-shirt",
+                Rating: "8.55",
+                Cateogry: "men cateogry",
+                description: "From classic cotton tees to statement graphic prints, we have something for everyone. Explore our collection and redefine your wardrobe today!",
+                Price: "$ 200.00",
+                class: "sixth",
+                src: "data:image/jpeg;base64,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",
+            },
+        ]
+
+
+        function showProducts() {
+            iHTML = "";
+            productList.forEach((key, index) => {
+                iHTML += `   
+                <div id="content" class="${key.Id}">      
+                <img src="${key.src}">           
+            <h2>${key.Title}</h2>  
+            <p class="product-des">${key.description}</p>  
+                 <p class="productId">Product Rating: <span>${key.Rating}</span></p>
+            <p class="productId">Product Id: <span>${key.Id}</span></p>
+            <p class="productId">Product Cateo gry: <span>${key.Cateogry}</span></p>
+            <p class="product-price"> ${key.Price}</p>
+            <button class="add-to-cart-btn" data-id="${key.Id}" onclick="addToCart(${index})">Add Now</button>        
+        </div>       
+                `
+            })
+
+            main.innerHTML = iHTML;
+        }
+        showProducts()
+
+        let cart = [];
+
+        function addToCart(index) {
+            let item = Number(num.getAttribute('data-count') || 0)
+            num.setAttribute('data-count', item + 1)
+            num.style.opacity = "1";
+            const selectedProduct = productList[index];
+            cart.push(selectedProduct);
+            updateCartUI();
+
+        }
+
+        function updateCartUI() {
+            const cartIcon = document.querySelector('.cart i');
+            const cartNum = document.getElementById('num');
+            const cartArea = document.getElementById('cartArea');
+
+            // Update cart content in the off-canvas       
+            if (cart.length == 0) {
+                document.getElementById('emptyCart').textContent = 'Your cart is empty.';
+                cartArea.innerHTML = '';
+            } else {
+                document.getElementById('emptyCart').style.display = 'none';
+                let cartHTML = '';
+                cart.forEach((product, index) => {
+                    cartHTML += `
+                    <div class="cartItems" style="margin-top: 14px; margin-bottom: 10px; border-bottom: 1px solid gainsboro;">    
+                     <div class="item-image" style="display:flex;align-items:center;gap:25px; margin-left:5px;">  
+                        <h4 style="font-weight:bold; font-size:22px;"> ${index}. <h4>  
+                        <img src="${product.src}" alt="not found">  
+                     </div>            
+                     <div class="item-title">     
+                            <p style="font-weight:400;">${product.Title}</p>                       
+                     </div>    
+                        <div class="item-price">       
+                            <p style="font-weight:500;"> ${product.Price}</p>     
+                        </div>
+                        <button class="btn btn-danger delete-cart-item">Delete</button>   
+                     </div>            
+                          
+                    `   
+                })  
+                cartArea.innerHTML = cartHTML;
+            }
+        }      
+
+     
+         
+
+
+    
+
+
+    </script>
+
+</body>
+
+</html>

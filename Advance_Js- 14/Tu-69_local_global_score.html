@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu- 69 Local, Global and functional scoped varibles</title>
+</head>
+
+<body>
+     <h1>Local, Global and funcitonal scoped variables in javascript..</h1>
+
+     <script>
+
+          //=========> #1. The variables which is created with the name of 'let' and 'const' they have block level scope we can only access them inside the braces only
+          function localFunction() {
+               let a = "I am a local function..";
+               console.log(a);
+          }
+          // It will throw an error because:   the variable which is declared with the name of let and const keyword inside a function it's scope is only valied for function we can only use it insider the function and if we try to use it outside the funciton it will give an error
+          // localFunction()
+          // console.log(a)  //It will through an error
+
+
+
+          //==========> #2. The variable which is created with the name of 'var' they have functional scope they can access inside the function and outside the function
+          var b;
+          function funcitonalScoped() {
+               b = "I am functional scoped variable..";
+               // console.log(b)
+          }
+          funcitonalScoped();
+          // console.log(b) // Here we can use variable 'b' outside the function also
+
+
+
+
+          //==============> #3. Global scoped variable:  The variable which is created outside the function is called globalVariable we can use global variable any where 
+          const globalVariable = "I am a global variable";
+          function accessGlobal() {
+               console.log(globalVariable) // we can use here
+          }
+          accessGlobal()
+          console.log(globalVariable) // we can also use it here
+
+
+     </script>
+</body>
+
+</html>

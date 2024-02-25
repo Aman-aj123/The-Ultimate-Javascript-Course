@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu - 65 Getter, setter and inhanceOf operater in javascript</title>
+</head>
+
+<body>
+     <h1>Getter, Setter and inhanceOf operator in javascript</h1>
+
+
+     <script>
+
+          class Animal {
+               constructor(name) {
+                    this._name = name;
+               }
+               printAnimal() {
+                    console.log(`The animal is ${this._name}`)
+               }
+               // Here we are using 'get' keyword to get these functions as a property
+               get greetAnimal() {
+                    console.log(`Hellow ${this._name}`)
+               }
+               get kingAnimal() {
+                    // console.log(`${this._name} is the King of all the animals.`)
+               }
+               // Here we are using 'set' keyword to set the constructor name as a property
+               set setAnimalName(animalName) {
+                    this._name = animalName;
+               }
+
+               get printGetter() {
+                    console.log(` I am getting the ${this._name} without calling function`);
+               }
+
+               set value(value) {
+                    return this._name = value;
+               }
+          }
+
+          /* ==========> By making any function with 'get' keyword we are able to use that function like property here's we have maked a class and created a greetAnimal function with get keyword so it would be access without braces we can access it by only writeing the class name and it's function name example:
+         new Animal().greetAnimal
+
+
+         -------- > here we are using the greetAnimal function like a property
+         const animalFirst = new Animal("Monkey").greetAnimal;
+         const secondAnimal = new Animal("Lion").kingAnimal;
+
+          Here we are changing the name of the animal's
+         const notChangedName = new Animal("Lion");
+         console.log('notChangeName', notChangedName)
+         const changeName = new Animal("Monkey").changeName = "Giraffe"
+         console.log(changeName)
+
+         const callGet = new Animal().printGetter;
+         const changeName = new Animal().value = "Mahatma gandhi.."
+         console.log(changeName) 
+        */
+
+
+          // -------> Instanceof operator in javascript is  used to check an array belongs to class or not
+          // Examples: 
+
+          // here we are checking that particular object is belongs to a class or not
+          const checkInstance = new Animal("Monkey");
+          console.log(checkInstance instanceof Animal); // It gives true because Animal object is made up of class keyword
+          if (checkInstance) {
+               console.log("The particular object is belong to a class..")
+          } else {
+               console.log("The particular object is not belong to a class..")
+          }
+
+          const secondCheck = "I am not a class"
+          console.log(secondCheck instanceof Animal); // It will give false because because it doesn't belongs to class
+
+
+          // NOTE: ---> It also returns true when the any class is created  from 'inherit' keyword.
+          // Example:
+          class Monkey extends Animal{
+
+          }
+
+          const anotherCheck = new Monkey("Monkey eat's banana");
+          console.log(anotherCheck instanceof Monkey) // It also gives true value..
+          
+
+     </script>
+</body>
+
+</html>

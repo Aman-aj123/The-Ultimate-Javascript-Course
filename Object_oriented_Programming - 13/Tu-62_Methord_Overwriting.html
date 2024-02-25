@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu-62 Method Overwritting in js</title>
+</head>
+
+<body>
+     <h2>Method Overwritting in javascript..</h2>
+
+     <script>
+
+          class Animals {
+               run(animal) {
+                    console.log(`The ${animal} is runnning...`);
+               }
+               jump(animal) {
+                    console.log(`The ${animal} is jumping..`);
+               }
+               play(animal) {
+                    console.log(`The ${animal} is playing..`);
+               }
+          }
+
+          // Here we are doing overwritting in jump and play function
+          class bear extends Animals {
+               jump(animal) {
+                    console.log(`The ${animal} is Jumping with it's Fat leg..`);
+               }
+               play(animal) {
+                    console.log(`The ${animal} is Playing in the Forest with it's friends.`)
+               }
+               /* If we didn't write jump and play funtion then it doesn't overwrite and it print the default function which exists with his parent. */
+          }
+
+          const jumpAnimal = new bear().jump("Bear"); // Output: The bear is Jumping with it's Fat leg..
+          const playAnimal = new bear().play("Bear"); // Output: The bear is playing in the Forest with it's friends..
+
+
+     </script>
+</body>
+
+</html>

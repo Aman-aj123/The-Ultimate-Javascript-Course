@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu - 16 Quick Quiz</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        let num;
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+
+        const randomNumber = getRandomInt(1, 100);
+
+
+
+        while (num !== randomNumber) {
+ 
+            num = prompt("Guess the right number")
+
+            if (num < randomNumber) {
+                console.log("This number is smaller than the actual number")
+            }
+
+            else if (num > randomNumber) {
+                console.log("This number is Greater than the actual number")
+            }
+
+        }
+
+        document.write("<h1>" + "You Guess right number" + "<h1>")  
+ </script>
+
+</body>
+
+</html>

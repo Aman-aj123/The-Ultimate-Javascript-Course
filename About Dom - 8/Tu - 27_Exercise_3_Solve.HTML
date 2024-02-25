@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu - 27 Exercise Solving 3 Tell me a jok </title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      font-weight: 500;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .jokebtn {
+      background: rgb(26, 225, 26);
+      color: white;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 9px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+    }
+
+    .jokebtn:hover {
+      transition: .2s;
+      background: rgb(11, 165, 11);
+    }
+
+    .jokebtn:active {
+      transition: .5s;
+      background: rgb(5, 98, 5);
+    }
+
+    #jokesbody{
+      background: hwb(0 83% 15%);
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <button class="jokebtn" onclick="display()">Click Here to See Jokes</button>
+
+  <div id="jokesbody">
+
+  </div>
+
+
+  <script>
+
+    function display() {
+      
+      let jokebtn = document.querySelector('.jokebtn')
+
+      let jokeBody = document.getElementById('jokesbody')
+
+      let changeJoke = Math.floor(Math.random() * 17)
+
+      let jokes = [
+
+        "What did one pirate say to the other when he beat him at chess?",
+        "Why did I quit my job at the coffee shop the other day?",
+        "It was just the same old grind over and over.",
+
+         "Why should you never buy anything that has Velcro with it?",
+
+        "What is the most groundbreaking invention of all time?",
+
+        "Did you hear about the famous Italian chef that recently died?",
+
+        "What kind of music do astronauts listen to?",
+
+        "What do you call Santa’s little helpers?",
+
+        "What’s the difference between a hippo and a zippo?",
+        "One is extremely big and heavy, and the other is a little lighter.",
+
+         "Where did Captain Hook get his hook?",
+
+        "Why should you never write with a dull pencil?",
+
+        "Why did the scarecrow win an award?",
+
+        "Did you hear about the cheese factory that exploded in France?",
+        "There was nothing left but de Brie.",
+   
+         "What do you get when you cross a snowman with a vampire?",
+        "Frostbite"
+
+      ]   [changeJoke]
+
+ 
+      jokeBody.innerHTML =  jokes;
+      jokebtn.innerHTML = "Click again to see other jokes"
+
+    }
+
+
+
+
+  </script>
+
+</body>
+
+</html>

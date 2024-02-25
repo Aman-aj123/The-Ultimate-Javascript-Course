@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage in js - 54</title>
+</head>
+
+<body>
+    <script>
+
+        // ==>>>>>> localStorage allows to save any data in your webPage permanently  eighter we refresh or reopen our page in anywhere.
+
+
+        // Syntax of localStorage
+        // In it we have to give two arguments the  first is : Item key    and the second is: Item value 
+        localStorage.setItem("Hellow", "World")
+
+
+        // =====>  localStorage methods
+
+        // 1. => It allows to print all the data from like an array which is in our localStorage
+        console.log(localStorage)
+
+        //    2. => It allows to set a particular data in our localStorage..
+        localStorage.setItem("This is the key of value", "This is the value of the value")
+
+        // 3. => It allows to remove a particular data from our localStorage..
+        localStorage.removeItem("first-item") // in this you give the key of your item which you have to remove.   
+
+        // 4. => It allows to clear the all the data from localStorage.
+        localStorage.clear()
+
+        // 5. It alows to get any item 
+        localStorage.setItem("Data Key", "Data Value")
+        let getData = localStorage.getItem("Data Key")
+        console.log(getData);
+
+
+        // Saving a value with the prompt in localStorage 
+        let Key = prompt("Hey! Enter Your Key!")
+        let Value = prompt("Hey! Enter Your Value!")
+        let ask = confirm("Do you want to Delete This localStorage?")
+
+        localStorage.setItem(Key, Value)
+        console.log(`This is your key: ${Key} and This is your value: ${Value}`)
+        if (ask) {
+            localStorage.removeItem(Key)
+            console.log(`Your Key is deleted sucessfully  with: ${Key}`)
+        }  
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage in javascript - 55</title>
+</head>
+
+<body>
+    <script>
+
+         // It is Same as sessionStorage  but the difference is in sessionStorage when we save any data in our  sessionalStorage and  open this page in other tab the data will be removed from that tab. It means that sessionStorage can save the data in current tab only..
+
+          //   =====> It some methods are:
+
+        //  It allows to print all the data from like an array which is in our sessionStorage
+
+         /* 1. */ console.log(sessionStorage)
+
+         /*2. */ sessionStorage.setItem("This is the key of value", "This is the value of the value")
+
+        /* 3. */ sessionStorage.removeItem("first-item")
+
+         /* 4. */ sessionStorage.clear()
+
+
+         /* 5. */   let getData = sessionStorage.getItem("Data Key")
+        console.log(getData);
+        sessionStorage.setItem('name', 'aman')
+
+
+    </script>
+</body>
+
+</html>

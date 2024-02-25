@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu - 70 Hoisting in javascript..</title>
+</head>
+
+<body>
+
+     <h1>Hoisting in javascript..</h1>
+     <script>
+
+          //==========> #1. Hoisting with variables
+          // console.log(a) // It will give a 'undefined' in the case of only 'let' variable
+          // var a = 50;
+
+          // console.log(b) // It will give an error because it  a is 'let' keyword variable
+          // let b;
+
+
+
+          //=========> #2. Hoisting with functions
+          hoistFirst(); // here, first we are calling the function and then creating
+          function hoistFirst() {
+               console.log("Hellow, I am a function and i am hoisting first..")
+          };
+
+
+          // hoistSecond()  :--> It will throw an error because the javascript only hoist function at the top it dosen't hosist variables
+          const hoistSecond = () => {
+               console.log("I am an arrow funciton and i am not hoisted at the top.");
+          }
+          hoistSecond() // It will works..
+
+     </script>
+</body>
+
+</html>

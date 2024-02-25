@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu - 32 Changing Classes Using classList method</title>
+    <style>
+        .red {
+            background: red;
+            color: blue;
+        }
+
+        .yellow {
+            background: yellow;
+            color: red;
+        }
+
+        .txt-white {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="fs">This is a heading</h1>
+
+
+    <script>
+
+        let head = document.getElementById('fs')
+        //  It allows we to Add a Classes into the our elements 
+        head.classList.add('red')
+
+        //  It allows to we to add Multiple classes into the our elements
+        head.className = 'yellow txt-white'
+
+        //  It allows to we to Remove classes into the our elements
+        head.classList.remove('txt-white')
+
+        //   It allows to add and remove class for example: if the class is present inside the element then it will remove 
+        head.classList.toggle('yellow')
+
+        //   It allows to check that this class is present inside the element or not? 
+        console.log(head.classList.contains('yellow'))
+
+    </script>
+
+</body>
+
+</html>

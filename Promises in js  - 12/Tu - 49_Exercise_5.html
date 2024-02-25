@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking to you</title>
+    <style>
+        body {
+            margin: 12px 60px;
+            background: rgb(0, 0, 0);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(13, 171, 13);
+            letter-spacing: .90px;
+        }
+
+        #text {
+            text-shadow: 0 0 22px rgba(26, 216, 26, 0.727);
+            display: flex;
+            flex-direction: column;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="text"></div>
+    <script>
+
+        // Intializing variables
+        const textMessage = document.querySelector("#text")
+
+        let messages = [
+            "Initializing hacking tool....",
+            "Connecting to your server....",
+            "Connection failed....",
+            "Retrying connection....",
+            "Connection sucessful....",
+            "Searching your location....",
+            "Searching sucessuful....",
+            "Connecting to your whatsapp....",
+            "Connected sucessfully....",
+            "Finding Username....",
+            "Username confirm.....",
+            "Finding your passoword.....",
+            "Finding failed....",
+            "Retrying......",
+            "Passoword sucessfull....",
+            "Attacking to your account....",
+            "Attacking start.....",
+            "Attacking failed.....",
+            "Reattacking.....",
+            "Final attacking start",
+            "Your passoword....",
+            "Your E-mail.....",
+            "Your Username.....",
+            "Your Account....",
+            "Your phone....",
+            "Your final location.....",
+            "Hacking personal details.....",
+            "Matching your location from server 2.....",
+            "Start Maching.....",
+            "Maching Confirm.....",
+            "Hacking...",
+            "Confirming.....",
+            "Hacked sucessful....."
+        ];
+
+        const additionalMessages = [
+            "Injecting trojan horse...",
+            "Decrypting encrypted files...",
+            "Downloading classified data...",
+            "Evading firewalls...",
+            "Bypassing security protocols...",
+            "Initiating stealth mode...",
+            "Executing malicious code...",
+            "Cracking encryption keys...",
+            "Accessing mainframe...",
+            "Analyzing network vulnerabilities...",
+            "Deploying spyware...",
+            "Intercepting communications...",
+            "Exploiting software loopholes...",
+            "Escaping detection...",
+            "Generating fake credentials...",
+            "Obtaining admin privileges...",
+            "Silently infiltrating servers...",
+            "Extracting sensitive information...",
+            "Corrupting data integrity...",
+            "Creating a digital clone...",
+            "Hijacking user sessions...",
+            "Manipulating system logs...",
+            "Disabling antivirus...",
+            "Overriding security protocols...",
+            "Disguising as a harmless process...",
+            "Uploading malware payload...",
+            "Elevating user privileges...",
+            "Planting remote access tools...",
+            "Executing remote commands...",
+            "Camouflaging in the network...",
+            "Hiding traces of intrusion...",
+            "Simulating system errors...",
+            "Triggering false alarms...",
+            "Initiating self-destruct sequence...",
+            "Encrypting communication channels...",
+            "Subverting network defenses...",
+            "Disrupting server stability...",
+            "Generating false reports...",
+            "Falsifying authentication tokens...",
+            "Manipulating sensor readings...",
+            "Concealing digital fingerprints...",
+            "Initiating counterintelligence...",
+            "Overloading server bandwidth...",
+            "Unleashing cyber worms...",
+            "Compromising database integrity...",
+            "Creating a digital diversion...",
+            "Interfering with network traffic...",
+            "Crafting sophisticated phishing emails...",
+            "Launching social engineering attacks...",
+            "Initiating code injection...",
+            "Exploiting zero-day vulnerabilities...",
+            "Reverse engineering security protocols...",
+            "Deploying advanced persistent threats...",
+            "Manipulating network traffic...",
+            "Exfiltrating confidential data...",
+            "Implementing polymorphic malware...",
+            "Conducting cyber reconnaissance...",
+            "Launching DDoS attacks...",
+            "Cracking multi-factor authentication...",
+            "Infiltrating secure databases...",
+            "Hacking biometric systems...",
+            "Generating false digital identities...",
+            "Planting logic bombs...",
+            "Executing buffer overflow attacks...",
+            "Manipulating system memory...",
+            "Implementing side-channel attacks...",
+            "Compromising hardware integrity...",
+            "Escalating privilege escalation exploits...",
+            "Cracking cryptographic algorithms...",
+            "Manipulating machine learning models...",
+            "Evading intrusion detection systems...",
+            "Crafting ransomware payloads...",
+            "Exploiting supply chain vulnerabilities...",
+            "Integrating advanced steganography...",
+            "Spoofing GPS coordinates...",
+            "Decrypting SSL/TLS communication...",
+            "Intercepting secure communication channels...",
+            "Bypassing CAPTCHA mechanisms...",
+            "Exploiting web application vulnerabilities...",
+            "Manipulating blockchain consensus...",
+            "Engineering sophisticated phishing schemes...",
+            "Cracking password hash algorithms...",
+            "Evading virtual machine detection...",
+            "Disguising malware as legitimate software...",
+            "Automating social media manipulation...",
+            "Intercepting satellite communications...",
+            "Manipulating biometric recognition...",
+            "Disrupting critical infrastructure...",
+            "Reverse engineering proprietary protocols...",
+            "Hijacking IoT devices...",
+            "Exploiting AI-driven security systems...",
+            "Infiltrating quantum computing networks...",
+            "Overloading cloud computing resources...",
+            "Implementing cross-site scripting attacks...",
+            "Exploiting XML external entity vulnerabilities...",
+            "Bypassing secure boot processes...",
+            "Disabling hardware-based security features...",
+            "Exploiting DNS vulnerabilities...",
+            "Crafting SMS phishing attacks...",
+            "Manipulating virtual private networks...",
+            "Deploying sophisticated malware variants...",
+            "Eavesdropping on encrypted voice communications...",
+            "Conducting targeted industrial espionage...",
+            "Exploiting insecure wireless networks...",
+            "Hacking smart home devices...",
+            "Compromising autonomous vehicle systems...",
+            "Interfering with AI-driven decision-making...",
+            "Exploiting vulnerabilities in quantum cryptography...",
+            "Manipulating drone navigation systems...",
+            "Infiltrating virtual reality environments...",
+            "Engineering deepfake audio and video content...",
+            "Cracking voice biometrics algorithms...",
+            "Hacking brain-machine interfaces...",
+            "Intercepting quantum entanglement communications...",
+            "Exploiting vulnerabilities in mind-reading technology...",
+            "Crafting malware for augmented reality platforms...",
+            "Manipulating genetic algorithms...",
+            "Intercepting biometric data...",
+            "Exploiting neural network vulnerabilities...",
+            "Hacking into quantum entangled systems...",
+            "Bypassing cognitive security measures...",
+            "Deploying nanobots for data extraction...",
+            "Manipulating dark web transactions...",
+            "Infiltrating virtual currency networks...",
+            "Cracking biohacking countermeasures...",
+            "Exploiting vulnerabilities in augmented reality frameworks...",
+            "Initiating deep learning algorithms for cyber warfare...",
+            "Manipulating thought-controlled interfaces...",
+            "Hacking into brainwave authentication systems...",
+            "Implementing psychotronic mind control...",
+            "Disrupting quantum teleportation protocols...",
+            "Reverse engineering extraterrestrial technology...",
+            "Exploiting interdimensional security gaps...",
+            "Hijacking AI-driven autonomous agents...",
+            "Compromising holographic identity verification...",
+            "Deploying autonomous malware drones...",
+            "Intercepting telepathic communication channels...",
+            "Manipulating astral projection frequencies...",
+            "Crafting time-traveling cyber attacks...",
+            "Disrupting parallel universe encryption...",
+            "Bypassing metaphysical firewalls...",
+            "Exploiting vulnerabilities in celestial body networks...",
+            "Initiating cosmic-scale cyber espionage...",
+            "Cracking multidimensional encryption keys...",
+            "Implementing telekinetic data manipulation...",
+            "Infiltrating alternate reality social networks...",
+            "Hacking into the Akashic Records...",
+            "Manipulating quantum consciousness streams...",
+            "Exploiting time-loop security weaknesses...",
+            "Initiating cyber attacks from the singularity...",
+            "Crafting wormholes for data transmission...",
+            "Deploying intergalactic malware signatures...",
+            "Hijacking interstellar communication protocols...",
+            "Compromising exoplanetary defense systems...",
+            "Bypassing interplanetary network firewalls...",
+            "Exploiting extraterrestrial WiFi vulnerabilities...",
+            "Initiating warp drive cyber attacks...",
+            "Cracking the code of dark matter encryption...",
+            "Implementing black hole-based data extraction...",
+            "Manipulating parallel universe blockchain consensus...",
+            "Disrupting cosmic microwave background encryption...",
+            "Bypassing intergalactic security clearances...",
+            "Hacking into quantum foam communication channels...",
+            "Exploiting cosmic microwave background encryption...",
+            "Initiating cyber attacks on quantum superposition...",
+            "Manipulating information flow in the multiverse...",
+            "Deploying cyber threats across alternate timelines...",
+            "Cracking time crystal encryption algorithms...",
+            "Exploiting quantum entanglement for data transmission...",
+            "Initiating cyber attacks in the space-time continuum...",
+            "Hacking into quantum teleportation communication...",
+            "Crafting interdimensional phishing schemes...",
+            "Disrupting cosmic string-based encryption...",
+            "Implementing cyber attacks on fifth-dimensional networks...",
+            "Compromising temporal lobe encryption...",
+            "Exploiting psychic network vulnerabilities...",
+            "Initiating cyber attacks on parallel universe databases...",
+            "Cracking time dilation encryption keys...",
+            "Deploying cyber threats across the multiverse...",
+            "Manipulating quantum superposition for data extraction...",
+            "Exploiting higher-dimensional security protocols...",
+            "Hijacking tachyon-based communication systems...",
+            "Bypassing extradimensional firewall systems...",
+            "Crafting cyber attacks on transdimensional networks...",
+            "Initiating cyber warfare in alternate realities...",
+            "Disrupting fifth-dimensional encryption algorithms...",
+            "Cracking hyperspace communication channels...",
+            "Deploying quantum cognition-based malware...",
+            "Exploiting interdimensional dark matter data storage...",
+            "Implementing cyber attacks on cosmic consciousness...",
+            "Manipulating transdimensional mind-machine interfaces...",
+            "Crafting cyber threats in the metaphysical realm...",
+            "Hacking into celestial body neural networks...",
+            "Initiating cyber attacks on quantum singularity networks...",
+            "Exploiting cosmic-scale blockchain vulnerabilities...",
+            "Deploying cyber attacks on interstellar communication relays...",
+            "Cracking multidimensional blockchain consensus...",
+            "Manipulating gravitational wave communication channels...",
+            "Bypassing cosmic background radiation encryption...",
+            "Exploiting extraterrestrial encryption algorithms...",
+            "Initiating cyber attacks on quantum consciousness networks...",
+            "Crafting cyber threats for the multiverse federation...",
+            "Deploying interdimensional malware payloads...",
+            "Hijacking cosmic microwave background encryption keys...",
+            "Compromising quantum foam-based data security...",
+            "Exploiting quantum tunneling communication protocols...",
+            "Initiating cyber attacks on dark energy networks...",
+            "Manipulating extraterrestrial mind-machine interfaces...",
+            "Crafting cyber threats in the exoplanetary realm...",
+            "Deploying malware across the cosmic web...",
+            "Cracking higher-dimensional encryption algorithms...",
+            "Implementing cyber attacks on quantum singularity relays...",
+            "Exploiting interstellar blockchain communication...",
+            "Initiating cyber warfare in the galactic core...",
+            "Crafting cyber threats on intergalactic information hubs..."
+        ];
+
+        // Contacting additionalMessages to messages array
+        messages = messages.concat(additionalMessages);
+
+
+        let stop = async (seconds) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(true)
+                }, seconds * 1000)
+            });
+        }
+
+        let showHack = async (hackMsg, timeDelay) => {
+            const awaitPromise = await stop(timeDelay);
+            return hackMsg;
+        }
+
+        const iterate = async () => {
+            let i = 0;
+            let mainMessages = "";
+            while (i < messages.length) {
+                mainMessages = await showHack(messages[i], .5);
+                textMessage.innerHTML += `${mainMessages} <br> `;
+                i++;
+            }
+            throw new Error("Message is ended..")
+        }
+        iterate()
+
+
+    </script>
+</body>
+
+</html>

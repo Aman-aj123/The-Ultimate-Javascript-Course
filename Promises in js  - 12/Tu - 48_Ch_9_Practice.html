@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter - 9 Practice Question</title>
+</head>
+
+<body>
+    <script>
+
+        // Question no: 1 
+
+        /* let loadScript = async (src) => {
+
+            return new Promise((resolve, reject) => {
+                let scriptEle = document.createElement('script')
+                scriptEle.src = src;
+                document.body.appendChild(scriptEle)
+                scriptEle.onload = () => {
+                    resolve("Your script has been loaded sucessfully with: " + src)
+                }
+                scriptEle.onerror = () => {
+                    console.log("Src got some with: " + src)
+                }
+            })
+
+        }
+
+        async function start() {
+    
+            let call = await loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js");
+            console.log(call)
+    
+        }
+
+        start() */
+
+
+        // let loadScript = (src) => {
+
+        //     let scriptEle = document.createElement('script')
+        //     scriptEle.src = src;
+        //     document.body.appendChild(scriptEle)
+        //     scriptEle.onload = () => {
+        //         console.log("Your script has been loaded sucessfully with: " + src)
+        //     }
+        //     scriptEle.onerror = () => {
+        //         console.log("Src got some with: " + src)
+        //     }
+        // }
+
+        // function start() {
+        //     let call = loadScript("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js");
+        // }
+
+        // start()
+
+
+        // Question no: 2 
+        /*   let p1 = () => {
+               return new Promise((resolve, reject) => {
+                   console.log("Promise a is loading....")
+                   setTimeout(() => {
+                       reject("This is rejected")
+                   }, 3000)
+               })
+           }
+   
+            let second = async () => {
+               try {
+                   let s = await p1();
+                   console.log(p)
+               } catch (error) {
+                   console.log("Your error has been catched ! with: " + error)
+               }
+           }
+      
+           second()       */
+
+
+        let fPromise = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("57")
+                }, 3000)
+            })
+        }
+        let sPromise = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log(("20"))
+                }, 1000)
+            })
+        }
+
+        let tPromise = () => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("40")
+                }, 4000)
+            })   
+
+        }
+
+        // let handle = async () => {
+        //     let h1 = await fPromise();
+        //     let h2 = await sPromise()
+        //     let h3 = await tPromise();
+        // }
+       console.log(fPromise())
+       console.log(sPromise())
+       console.log(tPromise())    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu-60 Constructors in javascript</title>
+</head>
+
+<body>
+
+     <script>
+
+          /*   // Creating a simple classes and objects
+   
+             class printFruits {
+                  constructor() {
+                       console.log("I am constructor and i am telling that how many this method is called")
+                  }
+                  apple() {
+                       console.log("This is an apple..")
+                  }
+                  guava() {
+                       console.log("This is guava.")
+                  }
+                  grapes() {
+                       console.log("This is grapes")
+                  }
+                  mango() {
+                       console.log("This is mango.")
+                  }
+             }
+   
+             // Here we are calling the printFruits objects
+             new printFruits().apple();
+             new printFruits().guava();
+             new printFruits().grapes();
+   
+             // When we run our objects the constructor will be also run always. We don't have to call constructor. */
+
+
+          class Animal {
+               constructor(welcomeAnimal, cateogary, born) {
+                    // this.welcomeAnimal = welcomeAnimal;
+                    this.Animal = welcomeAnimal
+                    this.cateogary = cateogary
+                    this.born = born
+
+                    console.log(`Welcome ${welcomeAnimal}...`)
+
+                    console.log(this.Animal)
+                    console.log(this.cateogary)
+                    console.log(this.born)
+               }
+               Hii(animalName) {
+                    animalName: animalName;
+                    console.log(`Hi ${animalName}..`)
+               }
+               drink(drinkAnimal) {
+                    drinkAnimal: drinkAnimal;
+                    console.log(`${drinkAnimal} is drinking water...`)
+               }
+               eat(eatAnimal) {
+                    this.eatAnimal = eatAnimal;
+                    console.log(`${eatAnimal} is eating..`)
+               }
+               running(runningAnimal) {
+                    console.log(`${runningAnimal} is running on the road...`)
+               }
+
+          }
+          // new Animal("Lion").eat("Lion");
+
+          class cat extends Animal {
+               constructor(activity) {
+                    super();
+                    console.log(`Hellow cat..`);
+                    // this.born = born
+                    this.activity = activity
+
+               }
+
+               jump() {
+                    console.log(`Cat is jumping...`)
+               }
+
+          }
+
+          class horse extends Animal {
+               constructor() {
+                    console.log("Horse is coming..");
+                    super();
+               }
+               runFast() {
+                    console.log(`Horse is running fast..`)
+               }
+          }
+
+          class anotherExtend extends Animal {
+
+          }
+
+          new anotherExtend().eat("Elephant..");
+
+
+
+
+
+     </script>
+
+
+
+</body>
+
+</html>

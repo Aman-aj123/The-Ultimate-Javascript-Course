@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu - 17 Console Methods in javascript</title>
+</head>
+
+<body>
+
+    <script>
+
+        // It print an warning
+        console.warn("This is warning")
+
+        // It print an error
+        console.error("This is error")
+
+        // It give a warning if the statement is false
+        console.assert(10 > 20)
+
+        // It shows the objects into the table format
+        let marks = {
+            Harray: 30,
+            Nitika: 50,
+            Rahul: 80,
+            Mohan: 90
+        }
+        console.table(marks)
+
+
+        // It tells that how much time element is  taking
+        console.time("ForLoop: ")
+        for (let i = 0; i <= 5; i++) {
+            console.log(i)
+        }
+        console.timeEnd("ForLoop: ")
+
+
+        console.time("whileLoop: ")
+        let i = 0;
+        while (i < 5) {
+            i++;
+            console.log(i)
+        }
+        console.timeEnd("whileLoop: ")
+
+         
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>TU - 66 Ch-11 Practice set questions</title>
+</head>
+
+
+<body>
+     <h1>Chapter 11 Practice set Qestions</h1>
+
+     <script>
+
+          // Question: 1 -----> Create a class with the name of complex which represents the complex number
+
+          /*  class Complex {
+                 constructor(real, imaginary) {
+                      this.real = real;
+                      this.imaginary = imaginary;
+                 }
+                 add(addNumber) {
+                      this.real = this.real + addNumber.real;
+                      this.imaginary = this.imaginary + addNumber.imaginary;
+                 }
+                 compareNum() {
+                      if (this.real == this.imaginary) {
+                           console.log("Congrat's Your both numbers are equal")
+                      }
+                      else {
+                           return;
+                      }
+                 }
+            }
+  
+            const printNumber = new Complex(2, 2);
+            console.log(printNumber);
+  
+            const firstNum = new Complex(4, 4);
+            const secondNum = new Complex(4, 4);
+  
+            firstNum.add(secondNum);
+  
+            console.log(`Real Number is: ${firstNum.real} Imaginary Number is: ${firstNum.imaginary}`);
+  
+  
+            console.log(printNumber.compareNum())
+  
+            */
+
+
+
+
+          /* Question: 2 --------> Create a student class from Human being and overwrite a method and see the changes */
+
+          /*   class humanBeing {
+                  constructor(name) {
+                       this.name = name;
+                  }
+                  drink() {
+                       console.log("The Human beings can drink...");
+                  }
+                  eat() {
+                       console.log("The Human beings can eat..");
+                  }
+             }
+   
+             class student extends humanBeing {
+                  drink() {
+                       console.log("Students can also drink..");
+                  }
+                  eat() {
+                       console.log("Students can also eat..");
+                  }
+             }
+   
+             const student1 = new student("Aman").drink();
+             // checking if student class belongs to humanBegin class or not. 
+             console.log(new student() instanceof humanBeing);  */
+
+
+
+
+          /* Question 3. -----------> Use getter and setter method to get the real and imaginary values of previous number */
+
+          /* class Complex {
+                constructor(real, imaginary) {
+                     this.real = real;
+                     this.imaginary = imaginary;
+                }
+                add(addNumber) {
+                     this.real = this.real + addNumber.real;
+                     this.imaginary = this.imaginary + addNumber.imaginary;
+                }
+                get realNumber() {
+                     return this.real;
+                }
+                get imaginaryNumber() {
+                     return this.imaginary;
+                }
+                set realNum(realNumber) {
+                     return this.real = realNumber;
+                }
+                set imaginaryNum(imaginaryNumber) {
+                     this.imaginary = imaginaryNumber;
+                }
+           }
+ 
+           const getRealNumber = new Complex(5, 7).realNumber;
+           console.log(getRealNumber);
+           const getImaginaryNumber = new Complex(5, 7).imaginaryNumber;
+           console.log(getImaginaryNumber);
+ 
+           const setRealNum = new Complex(5, 8).realNum = 500;
+           console.log(setRealNum)
+           const setImaginaryNum = new Complex(8, 5).realNum = 120;
+           console.log(setImaginaryNum); */
+
+
+
+          /* Question no. 4 ----> Create a class with getter and setter method
+          */
+
+          class Person {
+               constructor(firstName, lastName) {
+                    this._firstName = firstName;
+                    this._lastName = lastName;
+               }
+               printFirstName() {
+                    return this._firstName;
+               }
+               printLastName() {
+                    return this._lastName;
+               }
+               get printFullName() {
+                    return `${this._firstName} ${this._lastName}`;
+               }
+               set userFirstName(firstName) {
+                    return `${this._firstName} = ${firstName}`;
+               }
+               set userLastName(lastName) {
+                    return this._lastName = lastName;
+               }
+               set userFullName(fullName) {
+                    const { firstName, secondName } = fullName.split(' ');
+                    return
+                    this._firstName = firstName;
+                    this._lastName = secondName;
+                    ;
+               } 
+
+          }
+
+          const personFirst = new Person("developer", "Aman").printFullName;
+          console.log(personFirst);
+
+          const personSecond = new Person("Coader", "Aman").userLastName = "Raj";
+          console.log(personSecond)
+
+          const personThird = new Person('Aman', 'kumar').userFirstName = "Shyam Singh"
+          console.log(personThird)
+
+
+
+
+     </script>
+
+</body>
+
+</html>

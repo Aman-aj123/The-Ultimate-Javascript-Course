@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu- 67 IIFE in javascript</title>
+</head>
+
+<body>
+     <h2>IIFE - Immediately Invoked function Express</h2>
+
+     <script>
+
+          const promiseFirst = () => {
+               return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                         resolve("Hey! I am a first promise..")
+                    }, 4000);
+               })
+          }
+          const promiseSecond = () => {
+               return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                         resolve("Hey! I am second Promise...")
+                    }, 2000);
+               })
+          }
+
+          // Using a simple function we are handling the promises
+          /* const handlePromises = async () => {
+               const p1 = await promiseFirst();
+               console.log(p1)
+
+               const p2 = await promiseSecond();
+               console.log(p2)
+          }
+          handlePromises(); */
+
+
+
+
+          // Syntax of IIFE function
+          /*  (
+                async function{
+                    
+                }
+                )   */
+
+
+          // Using IIFE function
+          /*   (
+                async () => {
+                     const p1 = await promiseFirst();
+                     console.log(p1)
+ 
+                     const p2 = await promiseSecond()
+                     console.log(p2)
+ 
+                 }
+ 
+           )();  */
+
+          // IIFE stands for Immediately Invoked function
+
+
+          // IIFE function with parameters
+          /*  (
+                 (a, b) => {
+                      console.log(a + b);
+                 }
+            )(50, 70);  */
+
+
+            
+          // Simple practices:
+          const startCounting = (
+               function () {
+                    return function () {
+                         let counter = 0;
+                         while (counter <= 10) {
+                              counter++;
+                              console.log(counter)
+                         }
+                    }
+               }
+          )();
+
+          console.log(startCounting());
+
+     </script>
+</body>
+
+</html>

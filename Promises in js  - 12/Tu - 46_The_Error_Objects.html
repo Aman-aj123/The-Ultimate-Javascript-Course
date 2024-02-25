@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The errors objects Tu - 46 in javascript</title>
+</head>
+
+<body>
+    <script>
+
+        /*  try {
+             // It allows to show a simply reference error 
+             throw new ReferenceError("This is reference error")
+             console.log(d)
+ 
+         } catch (error) {
+ 
+             // It allows to simpliy catch the error when error is showing
+             console.log(error)
+ 
+             // It gives the name of the error 
+             console.log(error.name)
+ 
+             // IT allows to give the error message that which error message is showing
+             console.log(error.messae)
+ 
+             // It allows to print full error 
+             console.log(error.stack)
+         } */
+
+        try {
+            let age = prompt("Hey! what is your age?");
+
+            if (age < 5) {
+                throw new ReferenceError("Your age is less than 5")
+            }
+            else if (age > 10) {
+                throw new ReferenceError("Your age is greater than 20")
+            }
+
+            else {
+                throw new ReferenceError("Please Enter valied age !")
+            }
+
+        }
+
+        catch (error) {
+            console.log(error)
+        }
+
+    </script>
+</body>
+
+</html>

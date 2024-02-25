@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu -  31 insertAdjacement, insertAdjacementElement, insertAdjacementText</title>
+</head>
+<body>
+    
+ <h1 id="firstH">This is a First Heading</h1>
+
+<script>
+ 
+   let head = document.getElementById('firstH');
+
+    //  It allows to insert the HTML inside the our give element 
+    head.insertAdjacentHTML('afterbegin', '<div class = "new">I am in inside the element</div>')
+
+    //  It allows to insert the HTML At the Top of our give element 
+    head.insertAdjacentHTML('beforebegin', '<div class = "new">I am in Begining</div>')
+
+    //  It allows to insert the HTML At the Last of our give element 
+    head.insertAdjacentHTML('afterend', '<div class = "new">I am in Last of the element</div>')
+
+    // It allows to remove any HTML from the body 
+     head.remove()
+     
+
+</script>
+  
+
+</body>
+</html>

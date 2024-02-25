@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu - 25 Chapter - 7 practice Questions</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #navbar {
+            justify-content: center;
+            padding: 10px 0px;
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            color: blue;
+            background: gainsboro;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Problem NO: 1 -->
+    <div id="navbar">
+        <li>Home</li>
+        <li>Services</li>
+        <li>About</li>
+        <li>Blogs</li>
+    </div>
+
+    <!-- Problem No: 2  -->
+    <table>
+        <tr>First </tr>
+        <tr>Second </tr>
+        <tr>Third </tr>
+
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+    </table>
+
+
+    <script>
+        //   Problem NO: 1 
+        let change = document.getElementById('navbar')
+        change.firstElementChild.style.background = 'deeppink';
+
+        //  Problem No: 2
+        change.lastElementChild.style.background = 'orange';
+
+        // Problem NO: 3
+        let li = Array.from(document.querySelectorAll('li'));
+        li.forEach((e) => {
+            e.style.color = 'darkgreen';
+        })
+
+    </script>
+
+</body>
+
+</html>

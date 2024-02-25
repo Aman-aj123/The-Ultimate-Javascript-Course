@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu - 24 Contains Matches Closests Methods</title>
+</head>
+
+<body>
+
+    <h1 class="first" id="fHead">This is a first heading</h1>
+
+    <h1 class="second" id="sHead">This is a second heading</h1>
+
+
+    <script>
+        let first = document.getElementById('fHead')
+
+        //   Matches method 
+        //   It gives False because Box class is not present inside it 
+        console.log(first.matches(".box"))
+
+        //   It gives True because fHead class is not present inside it 
+        console.log(first.matches(".first"))
+
+        
+        //  Contains methods 
+        console.log(first.contains(fHead))
+        console.log(fHead.contains(first))
+
+    </script>
+</body>
+
+</html>

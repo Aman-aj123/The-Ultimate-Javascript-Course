@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu - 72 Arrow function in javascript</title>
+</head>
+
+<body>
+
+     <h1> Arrow functions in javascript.. </h1>
+
+     <script>
+
+          //---------------> Syntax of an arrow function
+          /* const arrFun = () => {
+ 
+           }  */
+
+          //----------->  Simple example of an arrow function:
+          /*  const addNumbers = (num1, num2) => {
+                console.log(num1 + num2);
+           };
+           addNumbers(5, 8);  */
+
+          // We can also write the same function
+          const addNumbers = (num1, num2) => console.log(num1 + num2);
+          // addNumbers(5, 60);
+
+
+
+          // Otheres examples:
+          //--------------> Without arrow function 
+          function withoutArrowFunction(sentence) {
+               // console.log(sentence);
+          };
+          withoutArrowFunction("This is without arrow function Program..");
+
+          //--------------> With the help of an arrow function
+          const withArrowFunction = sentence => console.log(sentence); // this is a very small format to write any simple function 
+          // withArrowFunction("This is with the help of an arrow function Program..");
+
+
+
+
+          // --------------> Arrow function with objects
+          const personalInformation = {
+               name: "developerAman",
+               age: "14 years old",
+               email: "aman@gmail.com",
+               work: "Javascript developer",
+               experience: "1 years",
+               printName() {
+                    /* const funcParameter = this; 
+                     setTimeout( function() {
+                          console.log(`The name is '${funcParameter.name}'`);
+                     }, 3000); --->- We are printing without arrow function */
+
+                    setTimeout(() => {
+                         console.log(`The name is '${this.name}'`)
+                    }, 3000) // By using arrow function we can simply write 'this.name'
+               },
+          };
+          personalInformation.printName();
+
+     </script>
+
+</body>
+
+</html>

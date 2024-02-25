@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu - 26 Excercise 2 Soluction Snake, Water, Gun</title>
+    <style>
+        * {
+            font-size: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+
+        let user = prompt("Enter S for 'Snake' W for 'Water' G for 'Gun'")
+
+        let cpuI = Math.floor(Math.random() * 3)
+        let cpu = ["S", "W", "G"][cpuI]
+
+        const match = (cpu, user) => {
+            if (cpu == user) {
+                return "Nobody";
+            }
+            else if (user == "S" && cpu == "G") {
+                return "Cpu";
+            }
+
+            else if (user == "G" && cpu == "S") {
+                return "User";
+            }
+
+            else if (user == "W" && cpu == "G") {
+                return "Cpu";
+            }
+
+            else if (user == "S" && cpu == "W") {
+                return "User";
+            }
+
+            else if (user == "W" && cpu == "S") {
+                return "Cpu";
+            }
+
+            else if (user == "G" && cpu == "S") {
+                return "User";
+            }
+
+            else {
+                return "Nobody"
+            }
+
+
+
+        }
+
+        let result = match(cpu, user);
+        document.write(` CPU: ${cpu} <br> USER: ${user} <br> The Winner is: ${result} `)
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu-63 Constructor overwritting in javascript</title>
+</head>
+
+<body>
+     <h2>Constructor Overwritting in javascript..</h2>
+
+     <script>
+          class people {
+               constructor(name, email) {
+                    this.name = name;
+                    this.email = email;
+                    // console.log("This is parent Constructor..")
+                    // console.log(this.name)
+                    // console.log(this.email)
+               }
+               eat() {
+                    // console.log("The people are eating food..")
+               }
+               drink() {
+                    // console.log("The peoples are drinking milk")
+               }
+          }
+
+          // If in the child class there is no any constructor then the parent constructor will be automatically pushed in to child classes.
+          class programmer extends people {
+               constructor(name, email, id, work) {
+                    super(name, email)
+                    // console.log("This is child constructor..")
+                    this.name = name;
+                    this.email = email;
+                    this.id = id;
+                    this.work = work;
+
+                    // console.log("Name is :", this.name)
+                    // console.log("Email is:", this.email)
+                    // console.log("Id is: ", this.id)
+                    // console.log("Work is :", this.work)
+               }
+               eat() {
+                    // console.log("programmers are eating..")
+               }
+               drink() {
+                    // console.log("the programmers are drinking milk.")
+               }
+          }
+
+          const firstPeople = new people("Mohan", "rajMohan@gmail.com").eat();
+          const firstProgrammer = new programmer("Aman", "raj@gmail.com", "4", "Engineer");
+
+          // Exercise first and second.
+          async function fetchData() {
+               console.log("Please wait data is fetching..");
+               return (
+                    new Promise((resolve, reject) => {
+                         setTimeout(() => {
+                              resolve("Data is fetched..")
+                         }, 5000)
+                    })
+               )
+
+          }
+
+          const processData = async () => {
+               try {
+                    const callData = await fetchData();
+                    console.log(callData)
+                    console.log(faltu)
+                    console.log("Process ended")
+                    fetchData();
+               } catch (error) {
+                    console.log("error occurs with: ", error)
+               }
+          }
+          processData()
+
+          
+     </script>
+</body>
+
+</html>

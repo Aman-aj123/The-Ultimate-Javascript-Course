@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<he>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback hell and pyramid of doom - 37 </title>
+</he ad>
+
+<body>
+
+    <script>
+
+        // Callback Hell 
+
+        /*   function getCheese(callback) {
+               setTimeout(() => {
+                   let cheese = "🤑";
+                   console.log(`Here is your Cheese ${cheese}`)
+                   callback(cheese)
+               }, 2000);
+           }
+   
+   
+           function getDough(cheese, callback) {
+               setTimeout(() => {
+                   let dough = cheese + "🤡";
+                   console.log(`Here is your Dough ${dough}`)
+                   callback(dough)
+               }, 2000);
+           }
+   
+   
+           function getPizza(dough, callback) {
+               setTimeout(() => {
+                   let pizza = dough + "🎨";
+                   console.log(`Here is your pizza ${dough}`)
+                   callback(pizza)
+               }, 2000);
+           }
+   
+   
+           getCheese((cheese) => {
+               console.log(`You got your cheese ${cheese}`);
+   
+               getDough(cheese, (dough) => {
+                   console.log(`You got your Dough ${dough}`);
+   
+                   getPizza(dough, (pizza) => {
+                       console.log(`You got your pizza ${pizza}`);
+                   })
+               })
+   
+           }) */
+
+
+        //  =======>  Second example
+
+        /* const messageFirst = (messageSecond) => {
+              setTimeout(() => {
+                  console.log("This is message First..")
+                  messageSecond()
+              }, 2000)
+          }
+  
+          const messageSecond = () => {
+              setTimeout(() => {
+                  console.log("This is  message Second..")
+              }, 2000)
+          }
+  
+  
+          const printSomething = (messageFirst) => {
+              messageFirst(messageSecond);
+          }
+  
+          printSomething(messageFirst);
+          */
+
+
+        /*   function getData(getDataId, getNextData) {
+               setTimeout(() => {
+                   console.log("Data id with:", getDataId)
+                   if (getNextData) {
+                       getNextData()
+                   }
+                   else {
+                       return;
+                   }
+               }, 2000)
+           } */
+
+
+       
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

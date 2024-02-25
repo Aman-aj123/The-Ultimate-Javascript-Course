@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu - 71 Alarm Clock Javascript exerciese..</title>
+     <style>
+          * {
+               padding: 0;
+               margin: 0;
+               box-sizing: border-box;
+               font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+               user-select: none;
+          }
+
+          body {
+               min-height: 100vh;
+               display: grid;
+               place-items: center;
+          }
+
+          #wrapper {
+               position: relative;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+          }
+
+          .common-box {
+               width: 100px;
+               height: 100px;
+               border-radius: 50%;
+               position: absolute;
+               z-index: -1;
+          }
+
+          .box-orange {
+               background: orange;
+               bottom: 85px;
+          }
+
+          .box-red {
+               background: rgb(239, 18, 73);
+               bottom: 4px;
+               right: 6px;
+          }
+
+          .box-green {
+               background: rgb(18, 239, 18);
+               top: 4px;
+               left: 6px;
+          }
+
+          .container {
+               width: 345px;
+               height: fit-content;
+               padding: 10px 18px;
+               border-radius: 2px;
+               backdrop-filter: blur(28px);
+               border: 1px solid gainsboro;
+          }
+
+          .alarm-img {
+               width: 100%;
+               text-align: center;
+          }
+
+          .alarm-img img {
+               width: 53%;
+          }
+
+          .alarm-title {
+               text-align: center;
+               width: 100%;
+          }
+
+          .alarm-title h2 {
+               letter-spacing: 1px;
+               font-size: 27px;
+          }
+
+          .alarm-set-options {
+               display: flex;
+               width: 100%;
+               justify-content: center;
+               gap: 21px;
+               margin-top: 18px;
+          }
+
+          .common select {
+               height: 33px;
+               font-size: 16px;
+               letter-spacing: .90px;
+               border: none;
+               outline: none;
+               cursor: pointer;
+               border-radius: 2px;
+               box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+          }
+
+          .common select option {
+               font-size: 15.20px;
+               letter-spacing: .80px;
+               border: none;
+               outline: none;
+          }
+
+          .setAlarm-btn {
+               justify-content: center;
+               display: flex;
+               width: 100%;
+               margin-top: 13px;
+          }
+
+          .setAlarm-btn button {
+               width: 100%;
+               margin: auto;
+               font-size: 16px;
+               letter-spacing: .90px;
+               padding: 9px 12px;
+               background: rgb(19, 219, 19);
+               color: white;
+               font-weight: 500;
+               border-radius: 5px;
+               cursor: pointer;
+               border: none;
+               outline: none;
+               transition: .2s ease-in-out;
+          }
+
+          .setAlarm-btn:hover {
+               opacity: .7;
+          }
+     </style>
+</head>
+
+<body>
+     <div id="wrapper">
+          <!-- overlay boxes  -->
+          <div class="box-orange common-box"> </div>
+          <div class="box-red common-box"> </div>
+          <div class="box-green common-box"> </div>
+
+          <div class="container">
+               <div class="alarm-img">
+                    <img src="https://cdn.pixabay.com/photo/2021/01/29/15/25/alarm-5961342_640.png">
+               </div>
+               <div class="alarm-title">
+                    <h2 class="currentTitle">
+                         <span class="hours">00:</span><span class="minutes">00:</span> <span class="seconds">00</span>
+                    </h2>
+               </div>
+
+               <div class="alarm-set-options">
+                    <div class="common hour-option">
+                         <select>
+                              <option selected hidden>Hour</option>
+                         </select>
+                    </div>
+                    <div class="common minute-option">
+                         <select>
+                              <option selected hidden>Minutes</option>
+                         </select>
+
+                    </div>
+                    <div class="common  am-pm-option">
+                         <select>
+                              <option selected hidden>AM/PM</option>
+                              <option>AM</option>
+                              <option>PM</option>
+                         </select>
+                    </div>
+               </div>
+
+               <div class="setAlarm-btn">
+                    <button>Set Alarm</button>
+               </div>
+          </div>
+
+
+          <!-- Javascript code  -->
+          <script>
+
+               // Initializing important variables
+               const hourOption = document.querySelector(".hour-option select");
+               const minuteOption = document.querySelector(".minute-option select");
+               const hoursEl = document.querySelector(".hours");
+               const minutesEl = document.querySelector(".minutes");
+               const secondsEl = document.querySelector(".seconds");
+               const setAlarmBtn = document.querySelector(".setAlarm-btn button");
+               const alarmImage = document.querySelector(".alarm-img img");
+
+               // Append options function
+               const appendOptions = () => {
+                    // Appending options in hourElement
+                    let hourElHTML = "";
+                    for (let i = 0; i <= 12; i++) {
+                         i = i < 10 ? `0${i}` : i;
+                         hourElHTML += `<option>${i}</option>`;
+                    }
+                    hourOption.insertAdjacentHTML('afterbegin', hourElHTML);
+
+                    // Appending options in minuteElement
+                    let minuteElHTML = "";
+                    for (let b = 0; b <= 60; b++) {
+                         b = b < 10 ? `0${b}` : b;
+                         minuteElHTML += `<option>${b}</option>`;
+                    }
+                    minuteOption.insertAdjacentHTML('afterbegin', minuteElHTML);
+               };
+               appendOptions();
+
+               // Set alarm function
+               function setAlarm() {
+                    const hourValue = parseInt(hourOption.value, 10);
+                    const minuteValue = parseInt(minuteOption.value, 10);
+
+                    // Checking the valid time for alarm
+                    if (isNaN(hourValue) || isNaN(minuteValue)) {
+                         alert("Please enter a valid time.");
+                         return;
+                    }
+
+                    const nowDate = new Date();
+                    const targetDate = new Date(nowDate);
+                    targetDate.setHours(hourValue, minuteValue, 0, 0);
+
+                    const intervalId = setInterval(() => {
+                         const currentDate = new Date();
+                         const timeDifference = targetDate - currentDate;
+
+                         if (timeDifference <= 0) {
+                              clearInterval(intervalId);
+                              hoursEl.textContent = '00';
+                              minutesEl.textContent = '00';
+                              secondsEl.textContent = '00';
+                              alarmImage.src = "https://upload.wikimedia.org/wikipedia/commons/7/7a/Alarm_Clock_GIF_Animation_High_Res.gif";
+                              const alarmAudio = new Audio("alarm.mp3");
+                              alarmAudio.loop = true;
+                              alarmAudio.play();
+                         } else {
+                              const hoursRemaining = Math.floor(timeDifference / (1000 * 60 * 60));
+                              const minutesRemaining = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                              const secondsRemaining = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                              hoursEl.textContent = hoursRemaining < 10 ? `0${hoursRemaining}` : hoursRemaining;
+                              minutesEl.textContent = minutesRemaining < 10 ? `0${minutesRemaining}` : minutesRemaining;
+                              secondsEl.textContent = secondsRemaining < 10 ? `0${secondsRemaining}` : secondsRemaining;
+                         }
+                    }, 1000);
+               }
+
+               // Setting the event listener on setAlarmBtn
+               setAlarmBtn.addEventListener("click", setAlarm);
+
+
+          </script>
+</body>
+
+</html>

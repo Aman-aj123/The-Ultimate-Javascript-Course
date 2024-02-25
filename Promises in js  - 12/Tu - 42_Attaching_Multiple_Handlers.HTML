@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu - 42 Attaching Multiple Handlers with promises</title>
+</head>
+
+<body>
+    <body>
+        <script>
+        let hellow = () => {
+            setTimeout(() => {
+                console.log("I am function ")
+            }, 1000)
+        }
+        let first = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                 console.log("I am first promise and i  am resolved" )
+                resolve(10)
+            }, 3000)       
+        })
+        first.then(() => {
+            let second = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    console.log("Hey I am second promise and i am rejected")
+                    reject("Aman")
+                }, 1000)
+            })
+            second.catch(()=>{
+                setTimeout(()=>{
+                console.log("Promise second got some error and it is catched")
+                }, 1000) 
+            })
+        }).then(
+            setTimeout(()=>{
+                hellow()
+            }, 2000)
+        ) 
+           
+        
+        
+    </script>
+     </body>
+</body>
+
+</html>

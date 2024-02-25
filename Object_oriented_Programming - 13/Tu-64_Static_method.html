@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tu-64 Static Method in javascript..</title>
+</head>
+
+<body>
+     <script>
+
+          /*
+
+          By making any function using static keyword in classes and objects we can only use that function in only the particular object and we can't use it outside of the obect And we can also use that function in another object of the same class. And if we use any function which has created with static keyword then it through an error..
+
+           here you can see that i have maded a Person class with three objects in which two have maded with static keyword:
+
+          */
+
+          class Person {
+               constructor(name) {
+                    this.name = name;
+               }
+
+               greet() {
+                    // console.log(`${Person.capitilize(this.name)} how are you?`) /* we can also use it here like this */
+               }
+               /* here we are making a function with the static keyword */
+               static capitilize(word) {
+                    return `${word.charAt(0).toUpperCase()}${word.substr(1, word.length)}`;
+               }
+               static askCondition() {
+                    // console.log("Fine??")
+               }
+          }
+
+          // We can use it like this:
+          const secondPerson = new Person(Person.askCondition())
+          const thirdPerson = new Person(Person.capitilize("capitilize"));
+
+          const personOne = new Person("aman").greet();
+
+
+
+          // ==== More Examples
+          class Animal {
+               constructor(animalName) {
+                    this.animalName = animalName;
+               }
+               printName() {
+                    console.log(`${this.animalName}  ${Animal.animalFeature()}`);
+               }
+
+               static animalFeature() {
+                    return `is amazing animal i the world..`;
+               }
+          }
+
+          const firstAnimal = new Animal("Lion").printName();
+
+
+     </script>
+
+</body>
+
+</html>

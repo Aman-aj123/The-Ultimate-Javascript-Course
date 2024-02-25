@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype in javascript - 58</title>
+    <style>
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Prototype in Javascript</h1>
+    <script>
+
+        // You can see that we have an simple object in this object there are three proto ptoFirst, ptoSecond, ptoThird
+        let ptoObj = {
+            title: "coading",
+            Id: "1",
+            work: "Frontend Develper",
+      /* It is proto*/  ptoFirst: () => {
+                // alert("I am proto of First Proto of ptoObj")
+            },
+       /* It is proto*/ ptoSecond: () => {
+                console.log("I am second of First Proto of ptoObj")
+            },
+        /* It is proto*/ ptoThird: () => {
+                console.log("I am Third of First Proto of ptoObj")
+            }
+        }
+        // here we are calling this object with it's proto that we want
+        //  ptoObj.ptoFirst() 
+        //  ptoObj.ptoSecond()  
+        //  ptoObj.ptoThird()  
+
+
+        //   ====> we can set proto like this:  .__proto__
+
+        let anoPto = {
+            Id: "1",
+            Email: "Amanraj@gmail.com",
+            mobileNO: 9203093030,
+        }
+        let seperateProto = {
+            go: () => {
+                // alert("I am seperate proto and i am setted..")
+            }
+        }
+        let protoChain = {
+            Id: 108,
+            hellow: () => {
+                console.log("Hellow world")
+            }
+        }
+        protoChainProto = {
+            chaining: () => {
+                console.log("I am proto chaining.")
+            }
+        }
+        // protoChain.__proto__ = protoChainProto.chaining()
+
+        // seperateProto.__proto__ = protoChain.hellow()
+        // anoPto.__proto__ = seperateProto.go()
+
+        const simpleObjects = [{
+            Name: "Aman",
+            Age: "14 years old",
+            work: "Frontend developer",
+            firstProto: function () {
+                // console.log("I am a first proto..")
+            }
+        }]
+
+        //  simpleObjects[0].firstProto()
+        console.log(simpleObjects);
+
+        const secondSeperateProto = {
+            secondMainProto: function () {
+                alert('I am a secondMainProto.')
+            }
+        } 
+    </script>
+</body>
+
+</html>

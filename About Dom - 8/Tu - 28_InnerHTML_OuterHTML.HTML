@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu - 28 Inner HTML and Outer HTMl Method</title>
+</head>
+
+<body>
+
+    <h1 id="firstHead">This is a heading</h1>
+
+    <script>
+
+        let a = document.getElementById('firstHead')
+
+        // Inner HTML   
+        // It allows to change the content inside the any element
+        a.innerHTML = "This is changed";
+
+        //   Outer HTML 
+        // It gives also Tags  and content Present inside it   
+        console.log(a.outerHTML)
+
+      
+    </script>
+
+
+</body>
+
+</html>

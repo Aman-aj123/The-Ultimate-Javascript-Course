@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title> Tu - 30 Insertion Methods In JAVASCRIPT</title>
+</head>
+
+<body>
+
+   <h1>This is a first Insert</h1>
+   <b id="bold"></b>
+
+   <script>
+
+      // it allows to chagne the HTML Text 
+      let change = document.getElementsByTagName('h1')[0]
+      change.innerHTML = change.innerHTML + " <br> " + "I am Changed ";
+
+      //    It allows to create a new Element 
+      let create = document.createElement('i');
+      create.innerHTML = " <br> <br> <h1> This is itaic text </h1>";
+      document.body.appendChild(create)
+
+      //    It push the elment in the Top of our webpage
+         // document.body.prepend(create)
+
+      //    It push the elment in the Last of our webpage
+         // document.body.appendChild(create)
+
+      // It replace the element 
+      //   change.replaceWith(create)          
+
+
+
+   </script>
+
+</body>
+
+</html>
